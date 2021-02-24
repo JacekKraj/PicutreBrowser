@@ -1,0 +1,31 @@
+.poweredByInfoComponent {
+  position: fixed;
+  bottom: 1vh;
+  right: 1vh;
+  font-size: 12px;
+  color: #444;
+}
+
+.poweredByInfoComponent > a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) and (orientation: portrait) {
+  .poweredByInfoComponent {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .poweredByInfoComponent {
+    bottom: 1.5vh;
+    right: 1.5vh;
+  }
+}
+
+@media (min-width: 900px) and (orientation: landscape) {
+  .poweredByInfoComponent {
+    font-size: 16px;
+  }
+}
