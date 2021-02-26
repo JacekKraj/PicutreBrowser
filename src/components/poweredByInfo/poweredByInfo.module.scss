@@ -1,9 +1,12 @@
 .poweredByInfoComponent {
   position: fixed;
-  bottom: 1vh;
-  right: 1vh;
+  bottom: 0;
+  right: 0;
   font-size: 12px;
-  color: #444;
+  color: #111;
+  background-color: rgba(240, 240, 240, 0.7);
+  padding: 1%;
+  z-index: 11;
 }
 
 .poweredByInfoComponent > a {
@@ -27,5 +30,21 @@
 @media (min-width: 900px) and (orientation: landscape) {
   .poweredByInfoComponent {
     font-size: 16px;
+    padding: 0.5%;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+  .poweredByInfoComponent {
+    font-size: 16px;
+    padding: 0.3%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .poweredByInfoComponent {
+    font-size: 20px;
+    bottom: 1vh;
+    right: 1vh;
   }
 }

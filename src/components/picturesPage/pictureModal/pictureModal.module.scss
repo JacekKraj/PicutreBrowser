@@ -1,0 +1,317 @@
+.pictureModalComponent {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(246, 246, 246);
+  width: 85%;
+  height: 90%;
+  padding: 5%;
+  overflow: hidden;
+}
+
+.pictureVertical {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.pictureHorizontal {
+  display: block;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.pictureSquare {
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+.pictureDesc {
+  font-size: 14px;
+  padding: 5% 5% 0;
+  text-align: center;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8%;
+  color: #333;
+}
+
+.authorContainer > img {
+  display: block;
+  border-radius: 50%;
+  margin-right: 3%;
+}
+
+.authorContainer > p {
+  font-size: 17px;
+}
+
+.location {
+  position: absolute;
+  bottom: 3%;
+  left: 9%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  font-weight: lighter;
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .pictureModalComponent {
+    height: 85%;
+    width: 85%;
+  }
+
+  .authorContainer {
+    margin-bottom: 7%;
+  }
+
+  .authorContainer > img {
+    margin-right: 3%;
+    width: 9%;
+  }
+
+  .authorContainer > p {
+    font-size: 28px;
+  }
+
+  .pictureVertical {
+    max-width: 95%;
+  }
+
+  .pictureHorizontal {
+    max-width: 62%;
+  }
+
+  .pictureDesc {
+    font-size: 20px;
+    padding: 4% 3% 0;
+  }
+
+  .location {
+    bottom: 4%;
+    left: 7%;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 75%;
+    height: 85%;
+    padding: 3% 5%;
+  }
+
+  .pictureVertical {
+    max-width: 62%;
+  }
+
+  .pictureHorizontal {
+    max-width: 27%;
+  }
+
+  .pictureSquare {
+    max-width: 40%;
+  }
+
+  .pictureDesc {
+    font-size: 12px;
+
+    padding: 2% 5% 0;
+  }
+
+  .authorContainer {
+    margin-bottom: 4%;
+  }
+
+  .authorContainer > img {
+    margin-right: 2%;
+    width: 6%;
+  }
+
+  .authorContainer > p {
+    font-size: 15px;
+  }
+
+  .location {
+    bottom: 4%;
+    left: 6%;
+
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 70%;
+  }
+
+  .location {
+    bottom: 4%;
+    left: 6%;
+
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 900px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 80%;
+  }
+
+  .pictureVertical {
+    max-width: 85%;
+  }
+
+  .pictureHorizontal {
+    max-width: 38%;
+  }
+
+  .pictureSquare {
+    max-width: 60%;
+  }
+
+  .pictureDesc {
+    font-size: 16px;
+  }
+
+  .authorContainer > img {
+    width: 7%;
+  }
+
+  .authorContainer > p {
+    font-size: 21px;
+  }
+
+  .location {
+    bottom: 4%;
+    left: 6%;
+
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1050px) and (orientation: landscape) {
+  .authorContainer > img {
+    width: 5%;
+  }
+  .authorContainer > p {
+    font-size: 18px;
+  }
+  .pictureHorizontal {
+    max-width: 34%;
+  }
+
+  .pictureSquare {
+    max-width: 55%;
+  }
+}
+
+@media (min-width: 1100px) and (orientation: landscape) {
+  .pictureHorizontal {
+    max-width: 33%;
+  }
+
+  .pictureSquare {
+    max-width: 55%;
+  }
+
+  .pictureVertical {
+    max-width: 83%;
+  }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .pictureHorizontal {
+    max-width: 28%;
+  }
+
+  .pictureSquare {
+    max-width: 50%;
+  }
+
+  .pictureVertical {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1250px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 1000px;
+    height: 660px;
+  }
+  .pictureHorizontal {
+    max-width: 30%;
+  }
+
+  .pictureSquare {
+    max-width: 50%;
+  }
+
+  .pictureVertical {
+    max-width: 74%;
+  }
+
+  .authorContainer {
+    margin-bottom: 3%;
+  }
+}
+
+@media (min-width: 1600px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 1100px;
+    height: 750px;
+  }
+  .pictureHorizontal {
+    max-width: 30%;
+  }
+
+  .pictureSquare {
+    max-width: 52%;
+  }
+
+  .pictureVertical {
+    max-width: 78%;
+  }
+
+  .authorContainer > p {
+    font-size: 25px;
+  }
+
+  .authorContainer > img {
+    width: 6%;
+  }
+
+  .pictureDesc {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .pictureModalComponent {
+    width: 1200px;
+    height: 850px;
+  }
+  .pictureHorizontal {
+    max-width: 33%;
+  }
+
+  .pictureSquare {
+    max-width: 54%;
+  }
+
+  .pictureVertical {
+    max-width: 80%;
+  }
+
+  .location {
+    font-size: 23px;
+  }
+}

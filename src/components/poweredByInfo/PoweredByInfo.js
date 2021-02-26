@@ -6,7 +6,7 @@ const PoweredByInfo = () => {
   return (
     <p className={classes.poweredByInfoComponent}>
       Powered by{" "}
-      <a href="https://unsplash.com/" target="_blank">
+      <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
         Unsplash
       </a>
     </p>
