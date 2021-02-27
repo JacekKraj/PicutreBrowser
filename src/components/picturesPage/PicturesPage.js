@@ -24,6 +24,7 @@ const PicturesPage = () => {
     if (history.location.pathname !== "/") {
       const value = history.location.pathname.replace("/", "");
       picturesContext.getPictures(value.toLowerCase(), 1);
+      setPageNumber(2);
     }
   }, [history.location.pathname]);
 
@@ -33,7 +34,7 @@ const PicturesPage = () => {
 
   const getNextPictures = (nextPageNumber) => {
     picturesContext.getPictures(picturesContext.searchedValue, nextPageNumber);
-    setPageNumber((currState) => currState++);
+    setPageNumber(pageNumber + 1);
   };
 
   const resultsInfo = picturesContext.foundPictures ? (

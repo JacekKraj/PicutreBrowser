@@ -4,6 +4,7 @@
   outline: none;
   color: #555;
   width: 100%;
+  font-size: inherit;
 }
 
 ::placeholder {
@@ -15,8 +16,9 @@
   align-items: center;
   background-color: white;
   border: 1px solid #eee;
-
+  position: relative;
   padding: 3% 3%;
+  font-size: 14px;
 }
 
 .form {
@@ -30,9 +32,6 @@
 }
 
 @media (min-width: 411px) and (orientation: portrait) {
-  .input {
-    font-size: 17px;
-  }
   .inputContainer {
     padding: 4%;
   }
@@ -43,20 +42,15 @@
 }
 
 @media (min-width: 600px) and (orientation: portrait) {
-  .input {
-    font-size: 27px;
-  }
   .inputContainer {
     padding: 2.5% 3%;
     margin-right: 2%;
     border: 3px solid #eee;
+    font-size: 25px;
   }
 }
 
 @media (min-width: 600px) and (orientation: landscape) {
-  .input {
-    font-size: 14px;
-  }
   .inputContainer {
     padding: 1.5% 3%;
     width: 95%;
@@ -69,24 +63,18 @@
 }
 
 @media (min-width: 800px) and (orientation: landscape) {
-  .input {
-    font-size: 15px;
-  }
-
   .inputContainer {
     width: 85%;
     padding: 1.5% 2.5%;
+    font-size: 15px;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .input {
-    font-size: 19px;
-  }
-
   .inputContainer {
     border: 2px solid #eee;
     padding: 1.6% 3%;
+    font-size: 20px;
   }
 
   .searchIcon {
@@ -95,13 +83,10 @@
 }
 
 @media (min-width: 1150px) and (orientation: landscape) {
-  .input {
-    font-size: 17px;
-  }
-
   .inputContainer {
     border: 2px solid #eee;
     padding: 1% 2%;
+    font-size: 18px;
   }
 
   .searchIcon {
@@ -121,10 +106,6 @@
 }
 
 @media (min-width: 1800px) and (orientation: landscape) {
-  .input {
-    font-size: 23px;
-  }
-
   .inputContainer {
     width: 65%;
     padding: 1% 1.5%;
