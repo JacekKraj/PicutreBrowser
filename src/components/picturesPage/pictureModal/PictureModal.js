@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
-import classnames from "classnames";
 
 import classes from "./pictureModal.module.scss";
 import { PicturesContext } from "./../../../App";
@@ -85,11 +84,11 @@ const PictureModal = (props) => {
   return (
     <div className={classes.pictureModalComponent}>
       <div className={classes.authorContainer}>
-        <img src={picture.authorProfileImage}></img>
+        <img src={picture.authorProfileImage} alt={`${picture.authorName} profile `}></img>
         <p>{picture.authorName}</p>
       </div>
       <div>
-        <img src={picture.regularPictureUrl} className={shape}></img>
+        <img src={picture.regularPictureUrl} className={shape} alt={picture.description}></img>
         <p className={classes.pictureDesc}>{picture.description}</p>
       </div>
       <div className={classes.location}>

@@ -5,7 +5,6 @@ import axios from "axios";
 import classes from "./app.module.scss";
 import MainPage from "./components/mainPage/MainPage";
 import PicturesPage from "./components/picturesPage/PicturesPage";
-import { apiKey } from "./apiKey";
 
 export const PicturesContext = React.createContext(null);
 
@@ -17,9 +16,10 @@ const App = () => {
 
   const getPicturesFromTheServer = (value, pageNumber) => {
     value !== searchedValue && setSearchedValue(value);
-    const link = `https://api.unsplash.com/search/photos?query=${value}&page=${pageNumber}&per_page=30&client_id=${apiKey}`;
+    const apiKey = process.env.REACT_APP_UNSPLASH_ACCESSKEY;
+    const url = `https://api.unsplash.com/search/photos?query=${value}&page=${pageNumber}&per_page=30&client_id=${apiKey}`;
     axios
-      .get(link)
+      .get(url)
       .then((response) => {
         if (response.data.total) {
           value !== searchedValue && setPictures([]);

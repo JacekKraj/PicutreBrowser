@@ -3,7 +3,9 @@ import { useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import classnames from "classnames";
+import axios from "axios";
 
+import AutoComplete from "./autoComplete/AutoComplete";
 import classes from "./browserInput.module.scss";
 
 const theme = createMuiTheme({
@@ -59,16 +61,35 @@ const useStyles = makeStyles(() => ({
 
 const BrowserInput = (props) => {
   const [value, setValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [noSuggestions, setNoSuggestions] = useState(false);
 
   const history = useHistory();
 
   const iconStyle = useStyles();
 
-  const handleSubmit = (value, event) => {
-    event.preventDefault();
+  const handleSubmit = (value) => {
     const pathname = history.location.pathname.replace("/", "");
     pathname !== value && history.push(`/${value}`);
     setValue("");
+    setSuggestions([]);
+    setNoSuggestions(false);
+  };
+
+  const getSuggestions = (value) => {
+    if (value.length >= 3) {
+      axios.get(`https://unsplash.com/nautocomplete/${value}`).then((response) => {
+        setSuggestions([...response.data.autocomplete]);
+        if (response.data.autocomplete.length) {
+          setNoSuggestions(false);
+        } else {
+          setNoSuggestions(true);
+        }
+      });
+    } else {
+      setSuggestions([]);
+      setNoSuggestions(false);
+    }
   };
 
   return (
@@ -76,7 +97,8 @@ const BrowserInput = (props) => {
       <SearchIcon className={classnames(classes.searchIcon, iconStyle.icon)} />
       <form
         onSubmit={(e) => {
-          handleSubmit(value, e);
+          e.preventDefault();
+          handleSubmit(value);
         }}
         className={classes.form}
       >
@@ -86,10 +108,12 @@ const BrowserInput = (props) => {
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
+            getSuggestions(e.target.value);
           }}
           placeholder="Search for the picture"
         ></input>
       </form>
+      <AutoComplete suggestions={suggestions} noSuggestions={noSuggestions} handleSubmit={handleSubmit} />
     </div>
   );
 };
