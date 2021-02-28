@@ -1,0 +1,114 @@
+.input {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: #555;
+  width: 100%;
+  font-size: inherit;
+}
+
+::placeholder {
+  color: #555;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #eee;
+  position: relative;
+  padding: 3% 3%;
+  font-size: 14px;
+}
+
+.form {
+  display: block;
+  flex: 1;
+}
+
+.searchIcon {
+  margin-right: 3%;
+  color: #555;
+}
+
+@media (min-width: 411px) and (orientation: portrait) {
+  .inputContainer {
+    padding: 4%;
+  }
+
+  .searchIcon {
+    margin-right: 4%;
+  }
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .inputContainer {
+    padding: 2.5% 3%;
+    margin-right: 2%;
+    border: 3px solid #eee;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .inputContainer {
+    padding: 1.5% 3%;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .searchIcon {
+    margin-right: 2.5%;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .inputContainer {
+    width: 85%;
+    padding: 1.5% 2.5%;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .inputContainer {
+    border: 2px solid #eee;
+    padding: 1.6% 3%;
+    font-size: 20px;
+  }
+
+  .searchIcon {
+    margin-right: 3.5%;
+  }
+}
+
+@media (min-width: 1150px) and (orientation: landscape) {
+  .inputContainer {
+    border: 2px solid #eee;
+    padding: 1% 2%;
+    font-size: 18px;
+  }
+
+  .searchIcon {
+    margin-right: 3%;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+  .inputContainer {
+    width: 65%;
+    padding: 1% 1.5%;
+  }
+
+  .searchIcon {
+    margin-right: 1.7%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .inputContainer {
+    width: 65%;
+    padding: 1% 1.5%;
+    border: 3px solid #eee;
+  }
+}

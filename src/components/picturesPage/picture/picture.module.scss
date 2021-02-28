@@ -1,0 +1,76 @@
+.pictureComponent {
+  width: 47%;
+  height: 115px;
+  background-color: rgb(230, 230, 230);
+  margin: 1.5%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.picture {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  transition: 0.2s;
+}
+
+.pictureComponent:hover .picture {
+  transform: scale(1.05);
+}
+
+@media (min-width: 411px) and (orientation: portrait) {
+  .pictureComponent {
+    height: 125px;
+  }
+}
+
+@media (min-width: 650px) and (orientation: portrait) {
+  .pictureComponent {
+    height: 225px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .pictureComponent {
+    width: 31.5%;
+    height: 160px;
+    margin: 1% 0.8%;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .pictureComponent {
+    width: 23%;
+    height: 110px;
+    margin: 0.8% 1%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .pictureComponent {
+    height: 155px;
+  }
+  .picture:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .pictureComponent {
+    height: 175px;
+  }
+}
+
+@media (min-width: 1500px) and (orientation: landscape) {
+  .pictureComponent {
+    margin: 0.5% 0.5%;
+    height: 185px;
+    width: 19%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .pictureComponent {
+    height: 175px;
+  }
+}

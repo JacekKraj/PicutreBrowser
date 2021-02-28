@@ -1,0 +1,88 @@
+.autoCompleteComponent {
+  position: absolute;
+  top: 110%;
+  left: -1px;
+  width: calc(100% + 1px);
+  max-height: 50vh;
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: auto;
+  padding: 2.5% 0;
+  z-index: 2;
+}
+
+.noSuggestions {
+  width: 100%;
+  padding: 1.7% 5%;
+  font-size: inherit;
+  color: #555;
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .autoCompleteComponent {
+    border: 3px solid #eee;
+    padding: 1.5% 0;
+  }
+
+  .noSuggestions {
+    padding: 2.5% 3%;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .autoCompleteComponent {
+    padding: 1.2% 0;
+  }
+
+  .noSuggestions {
+    padding: 1.8% 3%;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .autoCompleteComponent {
+    padding: 2% 0;
+  }
+
+  .noSuggestions {
+    padding: 0.8% 3%;
+  }
+}
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  .autoCompleteComponent {
+    padding: 1.2% 0;
+  }
+
+  .noSuggestions {
+    padding: 1.5% 3%;
+  }
+}
+
+@media (min-width: 1150px) and (orientation: landscape) {
+  .autoCompleteComponent {
+    border: 2px solid #eee;
+    width: calc(100% + 4px);
+    left: -2px;
+  }
+}
+
+@media (min-width: 1100px) and (orientation: landscape) {
+  .noSuggestions {
+    padding: 1% 3%;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+  .noSuggestions {
+    padding: 0.8% 2.3%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .autoCompleteComponent {
+    border: 3px solid #eee;
+    width: calc(100% + 6px);
+    left: -3px;
+  }
+}

@@ -1,0 +1,62 @@
+.headerComponent > h2 {
+  margin: 0 0 8%;
+  text-align: center;
+  font-size: 36px;
+  color: #ffa500;
+  -webkit-text-stroke: 1px #222;
+}
+
+@media (min-width: 411px) and (orientation: portrait) {
+  .headerComponent > h2 {
+    font-size: 40px;
+    margin: 4% 0 10%;
+  }
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .headerComponent > h2 {
+    font-size: 62px;
+    margin: 2% 0 7%;
+    -webkit-text-stroke: 1.5px #444;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 2% 0 5%;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 2% 0 4%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 2% 0 4%;
+    font-size: 46px;
+  }
+}
+
+@media (min-width: 1150px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 2% 0 4%;
+    font-size: 43px;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 0.8% 0 2.7%;
+    font-size: 46px;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .headerComponent > h2 {
+    margin: 0.8% 0 3%;
+    font-size: 58px;
+  }
+}

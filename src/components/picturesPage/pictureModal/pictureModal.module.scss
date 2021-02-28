@@ -1,0 +1,186 @@
+.pictureModalComponent {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(246, 246, 246);
+
+  padding: 3%;
+}
+
+.picture {
+  display: block;
+  margin: 0 auto;
+}
+
+.pictureDesc {
+  font-size: 14px;
+  padding: 5% 5% 0;
+  text-align: center;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5%;
+  color: #333;
+}
+
+.authorContainer > img {
+  display: block;
+  border-radius: 50%;
+  margin-right: 3%;
+}
+
+.authorContainer > p {
+  font-size: 17px;
+}
+
+.location {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  font-weight: lighter;
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .pictureModalComponent {
+    padding: 2%;
+  }
+
+  .authorContainer > img {
+    margin-right: 3%;
+    width: 9%;
+  }
+
+  .authorContainer > p {
+    font-size: 28px;
+  }
+
+  .pictureDesc {
+    font-size: 20px;
+    padding: 4% 3% 0;
+  }
+
+  .location {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .pictureModalComponent {
+    padding: 1.5% 2%;
+  }
+
+  .horizontal .authorContainer {
+    margin-bottom: 3%;
+  }
+
+  .vertical .authorContainer {
+    margin-bottom: 5%;
+  }
+
+  .authorContainer > img {
+    margin-right: 2%;
+    width: 7%;
+  }
+
+  .authorContainer > p {
+    font-size: 14px;
+  }
+
+  .horizontal .location {
+    font-size: 14px;
+    margin-top: 3%;
+  }
+
+  .vertical .location {
+    margin-top: 6%;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .pictureModalComponent {
+    padding: 1.5% 1.5%;
+  }
+
+  .horizontal .location,
+  .vertical .location {
+    font-size: 15px;
+    margin-top: 3%;
+  }
+}
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  .pictureModalComponent {
+    padding: 1.5%;
+  }
+
+  .authorContainer > img {
+    width: 6%;
+  }
+
+  .authorContainer > p {
+    font-size: 19px;
+  }
+
+  .location > p {
+    font-size: 19px;
+  }
+
+  .authorContainer {
+    margin-bottom: 3%;
+  }
+}
+
+@media (min-width: 1150px) and (orientation: landscape) {
+  .pictureModalComponent {
+    padding: 1.5%;
+  }
+  .authorContainer {
+    margin-bottom: 2%;
+  }
+  .authorContainer > p {
+    font-size: 20px;
+  }
+
+  .vertical.location,
+  .horizontal .location {
+    margin-top: 2%;
+  }
+}
+
+@media (min-width: 1250px) and (orientation: landscape) {
+  .pictureModalComponent {
+    padding: 1% 1.5%;
+  }
+
+  .authorContainer {
+    margin-bottom: 2.5%;
+  }
+
+  .vertical.location,
+  .horizontal .location {
+    margin-top: 2%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .authorContainer > p {
+    font-size: 27px;
+  }
+
+  .authorContainer > img {
+    width: 5.5%;
+    margin-right: 1.5%;
+  }
+
+  .vertical .location,
+  .horizontal .location {
+    font-size: 25px;
+  }
+}

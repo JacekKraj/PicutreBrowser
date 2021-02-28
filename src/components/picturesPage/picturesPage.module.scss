@@ -1,0 +1,225 @@
+.picturesPageComponent {
+  padding: 8% 0 5%;
+}
+
+.inputComponentBox {
+  padding: 0 5%;
+}
+
+.mainContent {
+  margin-top: 10%;
+}
+
+.resultsInfo {
+  font-weight: lighter;
+  margin-bottom: 5%;
+
+  color: #333;
+}
+
+.resultsInfoContainer {
+  padding: 0 5%;
+}
+
+.resultsInfoContainer > p {
+  font-weight: lighter;
+  margin-bottom: 4%;
+}
+
+.resultsInfoContainer > ul {
+  margin-left: 5%;
+  font-weight: lighter;
+}
+
+.resultsInfoContainer > ul > li {
+  margin-bottom: 1%;
+}
+
+.searchedValue {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pictures {
+  min-height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  .picturesPageComponent {
+    padding: 5% 0;
+  }
+
+  .inputComponentBox {
+    padding: 0 7%;
+  }
+
+  .mainContent {
+    margin-top: 8%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 4%;
+  }
+
+  .resultsInfoContainer > p {
+    margin-bottom: 4%;
+  }
+
+  .resultsInfoContainer > ul {
+    margin-left: 4%;
+  }
+
+  .resultsInfoContainer {
+    padding: 0 7%;
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .picturesPageComponent {
+    padding: 2% 0;
+  }
+
+  .inputComponentBox {
+    padding: 0 9%;
+  }
+
+  .mainContent {
+    margin-top: 7%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 3%;
+  }
+
+  .resultsInfoContainer > p {
+    margin-bottom: 3%;
+  }
+
+  .resultsInfoContainer > ul {
+    margin-left: 3%;
+  }
+
+  .resultsInfoContainer {
+    font-size: 20px;
+    padding: 0 9%;
+  }
+
+  .pictures {
+    padding: 0 2%;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .mainContent {
+    margin-top: 5%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 3%;
+  }
+  .pictures {
+    padding: 0 1%;
+  }
+
+  .resultsInfoContainer > p {
+    margin-bottom: 4%;
+  }
+
+  .resultsInfoContainer > ul {
+    margin-left: 2.5%;
+  }
+
+  .resultsInfoContainer > ul > li {
+    margin-bottom: 1%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .picturesPageComponent {
+    padding: 3% 0;
+  }
+
+  .inputComponentBox {
+    padding: 0 13%;
+  }
+
+  .mainContent {
+    margin-top: 5%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 2%;
+  }
+
+  .resultsInfoContainer > p {
+    margin-bottom: 2%;
+  }
+
+  .resultsInfoContainer {
+    padding: 0 11%;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1150px) and (orientation: landscape) {
+  .picturesPageComponent {
+    padding: 2% 0;
+  }
+
+  .inputComponentBox {
+    padding: 0 12%;
+  }
+
+  .mainContent {
+    margin-top: 4%;
+  }
+
+  .resultsInfoContainer {
+    padding: 0 7%;
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+  .picturesPageComponent {
+    padding: 2% 0;
+  }
+
+  .mainContent {
+    margin-top: 3%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 1.5%;
+  }
+
+  .resultsInfoContainer > ul {
+    margin-left: 1.5%;
+  }
+
+  .resultsInfoContainer {
+    padding: 0 5%;
+  }
+}
+
+@media (min-width: 1800px) and (orientation: landscape) {
+  .inputComponentBox {
+    padding: 0 8%;
+  }
+
+  .mainContent {
+    margin-top: 2%;
+  }
+
+  .resultsInfo {
+    margin-bottom: 2%;
+  }
+
+  .resultsInfoContainer {
+    padding: 0 8%;
+    font-size: 28px;
+  }
+}
