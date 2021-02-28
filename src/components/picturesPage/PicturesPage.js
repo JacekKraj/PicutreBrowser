@@ -11,6 +11,7 @@ import Picture from "./picture/Picture";
 import Backdrop from "./../backdrop/Backdrop";
 import PictureModal from "./pictureModal/PictureModal";
 import Spinner from "./../spinner/Spinner";
+import ErrorPage from "./../errorPage/ErrorPage";
 
 const PicturesPage = () => {
   const [showPictureInModal, setShowPictureInModal] = useState("");
@@ -58,34 +59,40 @@ const PicturesPage = () => {
   );
 
   return (
-    <React.Fragment>
-      <div className={classes.picturesPageComponent}>
-        <Header />
-        <div className={classes.inputComponentBox}>
-          <BrowserInput />
-        </div>
-        <div className={classes.mainContent}>
-          {resultsInfo}
-          <InfiniteScroll
-            dataLength={picturesContext.pictures.length}
-            hasMore={picturesContext.hasMore}
-            loader={<Spinner />}
-            next={() => {
-              getNextPictures(pageNumber);
-            }}
-          >
-            <div className={classes.pictures}>{pictures}</div>
-          </InfiniteScroll>
-        </div>
-        <PoweredByInfo />
-      </div>
-      {showPictureInModal && (
+    <div>
+      {!picturesContext.networkError ? (
         <React.Fragment>
-          <Backdrop onClick={() => setShowPictureInModal(false)} />
-          <PictureModal id={showPictureInModal} />
+          <div className={classes.picturesPageComponent}>
+            <Header />
+            <div className={classes.inputComponentBox}>
+              <BrowserInput />
+            </div>
+            <div className={classes.mainContent}>
+              {resultsInfo}
+              <InfiniteScroll
+                dataLength={picturesContext.pictures.length}
+                hasMore={picturesContext.hasMore}
+                loader={<Spinner />}
+                next={() => {
+                  getNextPictures(pageNumber);
+                }}
+              >
+                <div className={classes.pictures}>{pictures}</div>
+              </InfiniteScroll>
+            </div>
+            <PoweredByInfo />
+          </div>
+          {showPictureInModal && (
+            <React.Fragment>
+              <Backdrop onClick={() => setShowPictureInModal(false)} />
+              <PictureModal id={showPictureInModal} />
+            </React.Fragment>
+          )}
         </React.Fragment>
+      ) : (
+        <ErrorPage />
       )}
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -4,17 +4,17 @@
   background-color: rgb(230, 230, 230);
   margin: 1.5%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .picture {
   display: block;
   height: 100%;
   margin: 0 auto;
-  cursor: pointer;
   transition: 0.2s;
 }
 
-.picture:hover {
+.pictureComponent:hover .picture {
   transform: scale(1.05);
 }
 
