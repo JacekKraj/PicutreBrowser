@@ -12,7 +12,7 @@ const MainPage = () => {
     picturesContext.clearPictures();
   }, []);
   return (
-    <div className={classes.appComponent}>
+    <div>
       <div className={classes.container}>
         <Header />
         <BrowserInput />

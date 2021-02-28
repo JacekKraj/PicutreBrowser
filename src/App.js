@@ -13,6 +13,7 @@ const App = () => {
   const [searchedValue, setSearchedValue] = useState("");
   const [foundPictures, setFoundPictures] = useState(true);
   const [hasMore, setHasMore] = useState(true);
+  const [networkError, setNetworkError] = useState(false);
 
   const getPicturesFromTheServer = (value, pageNumber) => {
     value !== searchedValue && setSearchedValue(value);
@@ -45,7 +46,10 @@ const App = () => {
           setHasMore(false);
         }
       })
-      .catch(() => {});
+      .catch((error) => {
+        setHasMore(false);
+        setNetworkError(error.message);
+      });
   };
 
   const clearPictures = () => {
@@ -64,11 +68,12 @@ const App = () => {
       <PicturesContext.Provider
         value={{
           getPictures: getPicturesFromTheServer,
-          pictures: pictures,
-          searchedValue: searchedValue,
-          clearPictures: clearPictures,
-          foundPictures: foundPictures,
-          hasMore: hasMore,
+          pictures,
+          searchedValue,
+          clearPictures,
+          foundPictures,
+          hasMore,
+          networkError,
         }}
       >
         {routes}

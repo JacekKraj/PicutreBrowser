@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useLayoutEffect } from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
+import classnames from "classnames";
 
 import classes from "./pictureModal.module.scss";
 import { PicturesContext } from "./../../../App";
@@ -38,13 +39,15 @@ const useStyles = makeStyles(() => ({
     },
 
     [`${theme.breakpoints.up("md")} and (orientation:landscape)`]: {
-      width: 22,
-      height: 22,
+      width: 20,
+      height: 20,
+      marginRight: 2,
     },
 
     [`${theme.breakpoints.up("mdlg")} and (orientation:landscape)`]: {
       width: 20,
       height: 20,
+      marginRight: 3,
     },
 
     [`${theme.breakpoints.up("lg")} and (orientation:landscape)`]: {
@@ -64,10 +67,26 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const useWindowSize = () => {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      setSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
+};
+
 const PictureModal = (props) => {
   const [picture, setPicture] = useState({});
-  const [shape, setShape] = useState("");
   const picturesContext = useContext(PicturesContext);
+  const [screenWidth, screenHeight] = useWindowSize();
+  const [pictureWidth, setPictureWidth] = useState(1);
+  const [pictureHeigth, setPictureHeigth] = useState(1);
+  const [shape, setShape] = useState("");
 
   const iconStyle = useStyles();
 
@@ -75,21 +94,50 @@ const PictureModal = (props) => {
     const pic = picturesContext.pictures.find((el) => {
       return el.id === props.id;
     });
-    let picShape = pic.width > pic.height ? classes.pictureVertical : classes.pictureHorizontal;
-    picShape = pic.width === pic.height ? classes.pictureSquare : picShape;
-    setShape(picShape);
+    let height, width;
+    if (screenHeight > screenWidth) {
+      for (let i = 0.8; i > 0; i = i - 0.01) {
+        let newScreenWidth = i * screenWidth;
+        let widthRatio = pic.width / newScreenWidth;
+
+        let testPicHeight = pic.height / widthRatio;
+        if (testPicHeight <= screenHeight * 0.8) {
+          height = testPicHeight;
+          width = pic.width / widthRatio;
+          i = 0;
+        }
+      }
+    } else if (screenWidth >= screenHeight) {
+      for (let i = 0.68; i > 0; i = i - 0.01) {
+        let newScreenHeight = i * screenHeight;
+        let heightRatio = pic.height / newScreenHeight;
+        if (pic.width / heightRatio <= screenWidth * 0.68) {
+          height = pic.height / heightRatio;
+          width = pic.width / heightRatio;
+          i = 0;
+        }
+      }
+    }
+    width >= height ? setShape(classes.horizontal) : setShape(classes.vertical);
+    setPictureWidth(width);
+    setPictureHeigth(height);
+
     setPicture(pic);
-  }, [props.pictureId]);
+  }, [screenWidth, screenHeight]);
 
   return (
-    <div className={classes.pictureModalComponent}>
+    <div className={classnames(classes.pictureModalComponent, shape)}>
       <div className={classes.authorContainer}>
         <img src={picture.authorProfileImage} alt={`${picture.authorName} profile `}></img>
         <p>{picture.authorName}</p>
       </div>
       <div>
-        <img src={picture.regularPictureUrl} className={shape} alt={picture.description}></img>
-        <p className={classes.pictureDesc}>{picture.description}</p>
+        <img
+          src={picture.regularPictureUrl}
+          className={classes.picture}
+          style={{ width: `${pictureWidth}px`, height: `${pictureHeigth}px` }}
+          alt={picture.description}
+        ></img>
       </div>
       <div className={classes.location}>
         <LocationOnIcon className={iconStyle.icon} />

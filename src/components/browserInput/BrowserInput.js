@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
@@ -63,10 +63,26 @@ const BrowserInput = (props) => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [noSuggestions, setNoSuggestions] = useState(false);
+  const [inputFocus, setInputFocus] = useState(false);
+
+  const inputContainer = useRef();
 
   const history = useHistory();
 
   const iconStyle = useStyles();
+
+  const handleOutsideClick = (event) => {
+    if (!inputContainer.current.contains(event.target)) {
+      setInputFocus(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const handleSubmit = (value) => {
     const pathname = history.location.pathname.replace("/", "");
@@ -93,7 +109,7 @@ const BrowserInput = (props) => {
   };
 
   return (
-    <div className={classes.inputContainer}>
+    <div className={classes.inputContainer} ref={inputContainer}>
       <SearchIcon className={classnames(classes.searchIcon, iconStyle.icon)} />
       <form
         onSubmit={(e) => {
@@ -103,6 +119,7 @@ const BrowserInput = (props) => {
         className={classes.form}
       >
         <input
+          autoComplete="off"
           className={classes.input}
           required={true}
           value={value}
@@ -110,10 +127,13 @@ const BrowserInput = (props) => {
             setValue(e.target.value);
             getSuggestions(e.target.value);
           }}
+          onFocus={() => {
+            setInputFocus(true);
+          }}
           placeholder="Search for the picture"
         ></input>
       </form>
-      <AutoComplete suggestions={suggestions} noSuggestions={noSuggestions} handleSubmit={handleSubmit} />
+      <AutoComplete suggestions={suggestions} inputFocus={inputFocus} noSuggestions={noSuggestions} handleSubmit={handleSubmit} />
     </div>
   );
 };
